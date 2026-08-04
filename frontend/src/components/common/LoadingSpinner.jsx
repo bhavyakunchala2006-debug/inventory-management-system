@@ -1,0 +1,18 @@
+import React from 'react';
+
+export const LoadingSpinner = ({ size = 'medium', text = 'Loading...' }) => {
+  const sizeClasses = {
+    small: 'w-5 h-5 border-2',
+    medium: 'w-8 h-8 border-3',
+    large: 'w-12 h-12 border-4',
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center p-6 space-y-3">
+      <div
+        className={`${sizeClasses[size] || sizeClasses.medium} border-slate-700 border-t-brand-500 rounded-full animate-spin`}
+      ></div>
+      {text && <p className="text-xs text-slate-400 font-medium tracking-wide animate-pulse">{text}</p>}
+    </div>
+  );
+};
