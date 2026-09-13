@@ -4,7 +4,7 @@ import { Header } from '../components/common/Header';
 
 export const MainLayout = ({ title = 'Dashboard', children }) => {
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-100">
+    <div className="flex min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <Sidebar />
       <div className="flex-1 flex flex-col min-w-0">
         <Header title={title} />

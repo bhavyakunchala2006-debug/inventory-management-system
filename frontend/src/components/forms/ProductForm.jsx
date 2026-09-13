@@ -104,7 +104,7 @@ export const ProductForm = ({ initialValues, categories = [], suppliers = [], on
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <label className="block text-xs font-semibold text-slate-300 uppercase mb-1">Selling Price ($)</label>
+          <label className="block text-xs font-semibold text-slate-300 uppercase mb-1">Selling Price (₹)</label>
           <input
             {...register('price', { required: 'Price is required', min: 0 })}
             type="number"
@@ -115,7 +115,7 @@ export const ProductForm = ({ initialValues, categories = [], suppliers = [], on
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-300 uppercase mb-1">Cost Price ($)</label>
+          <label className="block text-xs font-semibold text-slate-300 uppercase mb-1">Cost Price (₹)</label>
           <input
             {...register('costPrice', { required: 'Cost price is required', min: 0 })}
             type="number"

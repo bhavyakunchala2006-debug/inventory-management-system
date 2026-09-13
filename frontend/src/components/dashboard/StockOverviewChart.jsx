@@ -46,18 +46,21 @@ export const StockOverviewChart = ({ categoryStats = [] }) => {
     scales: {
       x: {
         grid: { display: false },
-        ticks: { color: '#94a3b8' },
+        ticks: { color: '#64748b' },
       },
       y: {
-        grid: { color: 'rgba(255, 255, 255, 0.05)' },
-        ticks: { color: '#94a3b8' },
+        grid: { color: 'rgba(15, 23, 42, 0.08)' },
+        ticks: { color: '#64748b' },
       },
     },
   };
 
   return (
     <div className="p-6 rounded-2xl glass-panel h-80 flex flex-col justify-between">
-      <h3 className="text-base font-semibold text-slate-100 mb-4">Stock Breakdown by Category</h3>
+      <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-4">
+        Stock Breakdown by Category
+      </h3>
+
       <div className="flex-1 relative min-h-0">
         <Bar data={data} options={options} />
       </div>

@@ -55,15 +55,27 @@ export const CategoriesPage = () => {
   const columns = [
     {
       header: 'Category Name',
-      cell: (row) => <span className="font-semibold text-slate-100">{row.name}</span>,
+      cell: (row) => (
+        <span className="font-semibold text-slate-900 dark:text-slate-100">
+          {row.name}
+        </span>
+      ),
     },
     {
       header: 'Description',
-      cell: (row) => <span className="text-slate-400 text-xs">{row.description || 'No description'}</span>,
+      cell: (row) => (
+        <span className="text-slate-400 text-xs">
+          {row.description || 'No description'}
+        </span>
+      ),
     },
     {
       header: 'Slug',
-      cell: (row) => <span className="text-brand-400 font-mono text-xs">{row.slug}</span>,
+      cell: (row) => (
+        <span className="text-brand-400 font-mono text-xs">
+          {row.slug}
+        </span>
+      ),
     },
     {
       header: 'Actions',
@@ -75,7 +87,7 @@ export const CategoriesPage = () => {
                 setSelectedCategory(row);
                 setIsModalOpen(true);
               }}
-              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
             >
               <Edit2 className="w-4 h-4" />
             </button>
@@ -84,7 +96,7 @@ export const CategoriesPage = () => {
           {hasRole('admin') && (
             <button
               onClick={() => handleDelete(row._id)}
-              className="p-2 rounded-lg bg-slate-800 hover:bg-rose-500/20 text-rose-400 transition-colors"
+              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-rose-500/20 text-rose-400 transition-colors"
             >
               <Trash2 className="w-4 h-4" />
             </button>
@@ -98,7 +110,10 @@ export const CategoriesPage = () => {
     <MainLayout title="Inventory Categories">
       <div className="space-y-6">
         <div className="flex justify-between items-center glass-panel p-4 rounded-2xl">
-          <h2 className="text-sm font-semibold text-slate-300">Category Definitions</h2>
+          <h2 className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+            Category Definitions
+          </h2>
+
           {hasRole(['admin', 'manager']) && (
             <button
               onClick={() => {
@@ -113,7 +128,12 @@ export const CategoriesPage = () => {
           )}
         </div>
 
-        <DataTable columns={columns} data={categories} loading={loading} emptyMessage="No categories created yet" />
+        <DataTable
+          columns={columns}
+          data={categories}
+          loading={loading}
+          emptyMessage="No categories created yet"
+        />
 
         <Modal
           isOpen={isModalOpen}
@@ -123,7 +143,11 @@ export const CategoriesPage = () => {
           }}
           title={selectedCategory ? 'Edit Category' : 'Create Category'}
         >
-          <CategoryForm initialValues={selectedCategory} onSubmit={handleSubmit} loading={submitting} />
+          <CategoryForm
+            initialValues={selectedCategory}
+            onSubmit={handleSubmit}
+            loading={submitting}
+          />
         </Modal>
       </div>
     </MainLayout>

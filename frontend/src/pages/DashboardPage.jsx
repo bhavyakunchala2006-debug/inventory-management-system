@@ -7,7 +7,7 @@ import { LowStockAlert } from '../components/dashboard/LowStockAlert';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { getDashboardSummaryApi } from '../services/dashboardService';
 import { formatCurrency } from '../utils/formatters';
-import { Package, Layers, Truck, AlertTriangle, DollarSign } from 'lucide-react';
+import { Package, Layers, Truck, AlertTriangle, IndianRupee } from 'lucide-react';
 
 export const DashboardPage = () => {
   const [data, setData] = useState(null);
@@ -64,7 +64,7 @@ export const DashboardPage = () => {
           <StatCard
             title="Inventory Value"
             value={formatCurrency(metrics.totalInventoryValue || 0)}
-            icon={DollarSign}
+            icon={IndianRupee}
             color="emerald"
             trend="Total Cost Value"
           />

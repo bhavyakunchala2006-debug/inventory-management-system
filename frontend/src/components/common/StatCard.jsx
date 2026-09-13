@@ -14,16 +14,27 @@ export const StatCard = ({ title, value, icon: Icon, trend, color = 'brand' }) =
   return (
     <div className={`p-6 rounded-2xl glass-panel bg-gradient-to-br ${selectedColor} border transition-all duration-200`}>
       <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{title}</p>
+        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+          {title}
+        </p>
+
         {Icon && (
-          <div className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/50">
+          <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/50">
             <Icon className="w-5 h-5" />
           </div>
         )}
       </div>
+
       <div className="mt-4 flex items-baseline justify-between">
-        <h3 className="text-2xl font-bold text-white tracking-tight">{value}</h3>
-        {trend && <span className="text-xs font-medium text-slate-400">{trend}</span>}
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+          {value}
+        </h3>
+
+        {trend && (
+          <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+            {trend}
+          </span>
+        )}
       </div>
     </div>
   );

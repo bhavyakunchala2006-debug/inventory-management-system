@@ -12,7 +12,7 @@ export const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 bg-slate-900/90 border-r border-slate-800/80 flex flex-col justify-between h-screen sticky top-0 z-40">
+      <aside className="w-64 bg-white dark:bg-slate-900/90 border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between h-screen sticky top-0 z-40">
       <div>
         {/* Brand Header */}
         <div className="h-16 flex items-center px-6 border-b border-slate-800/80 space-x-3">
@@ -20,7 +20,7 @@ export const Sidebar = () => {
             <Box className="w-5 h-5" />
           </div>
           <div>
-            <span className="font-bold text-lg text-white tracking-wide">INVENTRA</span>
+            <span className="font-bold text-lg text-slate-900 dark:text-white tracking-wide">INVENTRA</span>
             <span className="block text-[10px] uppercase tracking-widest text-brand-400 font-semibold">Pro Inventory</span>
           </div>
         </div>
@@ -37,7 +37,7 @@ export const Sidebar = () => {
                   `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150 ${
                     isActive
                       ? 'bg-gradient-to-r from-brand-600/30 to-brand-500/10 text-brand-400 border border-brand-500/30 shadow-sm'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/50'
                   }`
                 }
               >
@@ -50,7 +50,7 @@ export const Sidebar = () => {
       </div>
 
       {/* Footer Info */}
-      <div className="p-4 border-t border-slate-800/80 text-xs text-slate-500 text-center">
+      <div className="p-4 border-t border-slate-200 dark:border-slate-800/80 text-xs text-slate-500 text-center">
         <p>Inventra v1.0.0 &copy; 2026</p>
       </div>
     </aside>
